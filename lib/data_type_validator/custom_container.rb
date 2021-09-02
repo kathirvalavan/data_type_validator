@@ -14,6 +14,10 @@ module DataTypeValidator
       self.attributes[attr] = { type: DataTypeValidator::Constants::ARRAY_TYPE, sub_type: type, options: {}, attr: attr }
     end
 
+    def self.type_alias
+      @type_alias_instance ||= new
+    end
+
 
     def validate(data)
       validate_data_store(data)
