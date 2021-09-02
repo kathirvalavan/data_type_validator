@@ -9,9 +9,9 @@ module DataTypeValidator
       self.attributes[attr] = { type: type, options: {}, attr: attr }
     end
 
-    def self.array_attribute_definition(attr, type, options)
+    def self.array_attribute_definition(attr, type, options: {})
       self.attributes = {} if self.attributes.nil?
-      self.attributes[attr] = { type: ARRAY_TYPE, sub_type: type, options: {}, attr: attr }
+      self.attributes[attr] = { type: DataTypeValidator::Constants::ARRAY_TYPE, sub_type: type, options: {}, attr: attr }
     end
 
 

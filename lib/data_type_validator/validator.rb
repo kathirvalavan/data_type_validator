@@ -3,7 +3,6 @@ require 'data_type_validator/errors'
 
 module DataTypeValidator
   class Validator
-    
     include DataTypeValidator::Constants
     include DataTypeValidator::Errors
 
@@ -22,11 +21,11 @@ module DataTypeValidator
       when ARRAY_TYPE
         raise InvalidTypeDefinitions, " attr=#{definition[:attr]} => #{value} " unless value.is_a?(Array)
         value.each do |v|
-          DataTypeValidator.validate(definition[:sub_type], v, definition)
+          DataTypeValidator::Validator.validate(definition[:sub_type], v, definition)
         end
       when CUSTOM_CONTAINER_TYPE
         raise InvalidTypeDefinitions, " attr=#{definition[:attr]} => #{value} " unless value.is_a?(Hash)
-        type.new.validate(value)
+        type.class.new.validate(value)
       end
     end
 
