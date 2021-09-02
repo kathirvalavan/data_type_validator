@@ -3,9 +3,12 @@ require 'data_type_validator/errors'
 
 module DataTypeValidator
   class Validator
+    
+    include DataTypeValidator::Constants
+    include DataTypeValidator::Errors
 
     def self.validate(type, value, definition = {})
-      raise value.is_a?(String)  raise InvalidTypeDefinitions, "attr=#{definition[:attr]} => #{value}" if value.nil?
+      raise InvalidTypeDefinitions, "attr=#{definition[:attr]} => #{value}" if value.nil?
 
       case type
       when STRING_TYPE
