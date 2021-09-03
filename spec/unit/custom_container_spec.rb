@@ -24,7 +24,7 @@ RSpec.describe DataTypeValidator::CustomContainer do
 
   it 'should define subtype for array' do
     attr_data = custom_container.attributes
-    expect(attr_data[:array_attr][:sub_type]).to eq :string  
+    expect(attr_data[:array_attr][:sub_type]).to eq :string
   end
 
 end

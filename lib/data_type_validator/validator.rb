@@ -25,7 +25,7 @@ module DataTypeValidator
         end
       when CUSTOM_CONTAINER_TYPE
         raise InvalidTypeDefinitions, " attr=#{definition[:attr]} => #{value} " unless value.is_a?(Hash)
-        type.class.new.validate(value)
+        type.class.validate(value)
       end
     end
 
