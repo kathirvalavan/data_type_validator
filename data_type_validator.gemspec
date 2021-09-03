@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
   s.metadata    = { "source_code_uri" => "https://github.com/kathirvalavan/data_type_validator" }
   s.required_ruby_version = ">= 2.3"
-  gem.add_runtime_dependency(%q<activesupport>, [">= 4.2"])
+  s.add_runtime_dependency(%q<activesupport>, [">= 4.2"])
   s.add_development_dependency "bundler", "~> 1.17"
   s.add_development_dependency "rake", "~> 10.0"
   s.add_development_dependency "rspec", "~> 3.0"
